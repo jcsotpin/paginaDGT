@@ -253,19 +253,39 @@ class DGT {
         return sTabla;
     }
     listadoMultasPorFecha(fechaIni, fechaFin){
-        /** listadoMultasPorFecha –Realiza  un  listado  resumen  con  los  idMulta,  fecha  e importe de todas las multas entre las fechas dadas. Debe aparecer el importe total de todas las multas entre ambas fechas. */
         let sTabla = '<table border="1"';
-        sTabla += "<thread><tr>";
-        sTabla += "<th>ID Multa</th>";
-        sTabla += "<th>Fecha</th>";
-        sTabla += "<th>Importe</th>";
-        sTabla += "<th>Importe Total</th>";
-        sTabla += "</tr></thread>";
+            sTabla += "<thread><tr>";
+            sTabla += "<th>ID Multa</th>";
+            sTabla += "<th>Fecha</th>";
+            sTabla += "<th>Importe</th>";
+            sTabla += "<th>Importe Total</th>";
+            sTabla += "</tr></thread>";
 
-        //Cuerpo de la tabla
-        sTabla += "<tbody>";
+            //Cuerpo de la tabla
+            sTabla += "<tbody>";
 
-        let oMultas = this.personas.filter(oP => oP.fecha);
+        let fechaInicial=fechaIni;
+        let fechaFinal=fechaFin;
+        let importeTotal=0;
+
+        for(let i = 0; i <this.multas.length; i++){
+            if(this.multas[i].fecha > fechaInicial && this.multas[i].fecha<fechaFinal){
+                sTabla+="<tr><td>"+this.multas[i].idMulta+"</td>";
+                sTabla+="<td>"+this.multas[i].fecha+"</td>";
+                sTabla+="<td>"+this.multas[i].importe+"</td>";
+                sTabla+="<td>"+"-"+"</td></tr>";
+
+                importeTotal+=this.multas[i].importe;
+                
+            }
+        }
+
+            sTabla+="<td>"+"-"+"</td>";
+            sTabla+="<td>"+"-"+"</td>";
+            sTabla+="<td>"+"-"+"</td>";
+            sTabla+="<td>"+importeTotal+"</td></tr>"
+            
+            return sTabla;
     }
     listadoConductores(){
         // listadoConductores –Realiza un listado con todos los datos de los conductores.

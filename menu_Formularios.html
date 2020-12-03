@@ -37,134 +37,105 @@
 
 
   <div id="menu" class="container-fluid bg-info">
-    <!-- ABRE EL CONTENEDOR DEL MENU PRINCIPAL -->
-
-    <h1>DGT DAW</h1>
-
+    <h1>Página DGT</h1>
     <br>
     <br>
-
-    <!---------------------------------------------------------------------------------------------------->
-    <!-- Formulario Principal ABRE ----------------------------------------------------------------------->
-    <!---------------------------------------------------------------------------------------------------->
-
-    <div class="menu row justify-content-around bg-info">
-      <div class="col-12">  
-        <ul class="nav navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="mostrarAltaPersona();">Alta Persona</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="mostrarRegistroMulta();">Registrar Multa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="mostrarPagarMulta();">Pagar Multa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="mostrarImprimirMulta();">Imprimir Multa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="mostrarListadoSaldoConductor();">Listar Saldo Pendiente de Conductores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="mostrarListadoPuntosConductor();">Listar Puntos de los Condutores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="mostrarListadoMultasPorGuardia();">Listar Multas por Guardias</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"href="#" onclick="mostrarListadoMultasPorFecha();">Listar Multas por Fechas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="mostrarListadoConductores();">Listar Conductores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="mostrarListadoGuardias();">Listar Guardias Civiles</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <!--Bloque Menú de opciones-->
+  <div class="menu row justify-content-around bg-info">
+    <div class="col-12">  
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarAltaPersona();">Alta Persona</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarRegistroMulta();">Registrar Multa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarPagarMulta();">Pagar Multa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarImprimirMulta();">Imprimir Multa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarListadoSaldoConductor();">Listar Saldo Pendiente de Conductores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarListadoPuntosConductor();">Listar Puntos de los Condutores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarListadoMultasPorGuardia();">Listar Multas por Guardias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"href="#" onclick="mostrarListadoMultasPorFecha();">Listar Multas por Fechas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarListadoConductores();">Listar Conductores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="mostrarListadoGuardias();">Listar Guardias Civiles</a>
+        </li>
+      </ul>
+    </div>
   </div>
   </div>
-    
+  <!--Fin Bloque Menú de Opciones-->
+  
 
-  </div> <!-- ABRE EL CONTENEDOR DEL MENU PRINCIPAL -->
-
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Principal CIERRA --------------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
-
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Alta Conductor ABRE ------------------------------------------------------------------>
-  <!---------------------------------------------------------------------------------------------------->
+  <!--Bloque de Formularios-->
   <div class="container-fluid">
     <div class="">
+  
+  <!--Formulario de Alta de Persona-->    
   <form class="form-horizontal" name="formAltaConductor" id="formularios">
     <fieldset>
-
-      <!-- Form Name -->
       <legend>Alta Persona</legend>
 
-      <!-- Text input -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtNIF">Introduzca su NIF: </label>
         <div class="col-md-4">
           <input id="txtNIF" name="txtNIF" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Text input -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtNombre">Introduzca su nombre: </label>
         <div class="col-md-4">
           <input id="txtNombre" name="txtNombre" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Text input -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtApellidos">Introduzca sus apellidos: </label>
         <div class="col-md-4">
           <input id="txtApellidos" name="txtApellidos" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Text input -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtDireccion">Introduzca su dirección: </label>
         <div class="col-md-4">
           <input id="txtDireccion" name="txtDireccion" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Text input -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtCaducidadCarnet">Introduzca la caducidad de su carnet (Conductor):
         </label>
         <div class="col-md-4">
           <input id="txtCaducidadCarnet" name="txtCaducidadCarnet" type="date" placeholder=""
             class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Text input -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtPuestoGuardia">Introduzca su puesto (Guardia Civil): </label>
         <div class="col-md-4">
           <input id="txtPuestoGuardia" name="txtPuestoGuardia" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-
       <br>
 
-      <!-- Button -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="btnAceptarAltaPersona"></label>
         <div class="col-md-4">
@@ -175,59 +146,41 @@
 
     </fieldset>
   </form>
+<!--Fin Formulario de Alta Persona-->
 
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Alta Conductor CIERRA ---------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
-
-
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Registro Multa ABRE ------------------------------------------------------------------>
-  <!---------------------------------------------------------------------------------------------------->
-
+<!--Formulario de Registro de Multa-->
   <form class="form-horizontal" name="formRegistroMulta" id="formularios">
     <fieldset>
-
-      <!-- Form Name -->
       <legend>Registro Multa</legend>
 
-      <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtIdMulta">ID Multa: </label>
         <div class="col-md-4">
           <input id="txtIdMulta" name="txtIdMulta" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtNIFConductor">NIF Conductor: </label>
         <div class="col-md-4">
           <input id="txtNIFConductor" name="txtNIFConductor" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtNIFGuardia">NIF Guardia Civil: </label>
         <div class="col-md-4">
           <input id="txtNIFGuardia" name="txtNIFGuardia" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtImporteMulta">Importe: </label>
         <div class="col-md-4">
           <input id="txtImporteMulta" name="txtImporteMulta" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Text Area -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtDescripcion">Descripción: </label>
         <div class="col-md-4">
@@ -235,17 +188,13 @@
         </div>
       </div>
 
-      <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtFechaMulta">Fecha: </label>
         <div class="col-md-4">
           <input id="txtFechaMulta" name="txtFechaMulta" type="date" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-
-      <!-- Radios Multa Tipo -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="radios">Tipo Multa: </label>
         <div class="col-md-4">
@@ -264,8 +213,6 @@
         </div>
       </div>
 
-
-      <!-- PROVISIONAL PARA LAS MULTAS LEVES BONIFICADAS ******************************************************************** -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="ckMultaBonif">Bonificada: </label>
         <div class="col-md-4">
@@ -273,11 +220,9 @@
             <input type="checkbox" name="ckMultaBonif" id="ckMultaBonif" value="true">
             <p class="help-block">Chequee esta opción si la multa leve está bonificada</p>
           </label>
-          
         </div>
       </div>
 
-      <!-- PROVISIONAL PARA LAS MULTAS GRAVES  ** -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtPtosSustraidos">Puntos sustraidos: </label>
         <div class="col-md-4">
@@ -285,8 +230,6 @@
         </div>
       </div>
 
-
-      <!-- Button -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="btnAceptarRegistroMulta"></label>
         <div class="col-md-4">
@@ -297,33 +240,20 @@
 
     </fieldset>
   </form>
+<!--Fin Formulario de Registro de Multa-->
 
-
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Registro Multa CIERRA ---------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
-
-
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Pagar Multa ABRE --------------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
-
+<!--Formulario de Pago de Multa-->
   <form class="form-horizontal" name="formPagarMulta" id="formularios">
     <fieldset>
-
-      <!-- Form Name -->
       <legend>Pagar Multa</legend>
 
-      <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtIdMulta">ID Multa: </label>
         <div class="col-md-4">
           <input id="txtIdMulta" name="txtIdMulta" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Check Box -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="ckMultaPagada">Pagada: </label>
         <div class="col-md-4">
@@ -333,114 +263,85 @@
         </div>
       </div>
 
-
-      <!-- Button -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="btnAceptarBajaRemesa"></label>
         <div class="col-md-4">
-          <input type="button" id="btnAceptarBajaRemesa" name="btnAceptarBajaRemesa" class="btn btn-info"
+          <input type="button" id="btnAceptarPagarMulta" name="btnAceptarPagarMulta" class="btn btn-info"
             value="Aceptar" onclick="aceptarPagarMulta();" />
         </div>
       </div>
 
     </fieldset>
   </form>
+<!--Fin Formulario de Pago de Multa-->
 
-
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Pagar Multa CIERRA ------------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
-
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Imprimir Multa ABRE ------------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
-
+<!--Formulario de Impresión de Multa-->
   <form class="form-horizontal" name="formImprimirMulta" id="formularios">
     <fieldset>
-
-      <!-- Form Name -->
       <legend>Imprimir Multa</legend>
 
-      <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtIdMulta">ID Multa que desea imprimir: </label>
         <div class="col-md-4">
           <input id="txtIdMulta" name="txtIdMulta" type="text" placeholder="" class="form-control input-md">
-
         </div>
       </div>
 
-      <!-- Button -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="btnAceptarBajaRemesa"></label>
         <div class="col-md-4">
-          <input type="button" id="btnAceptarBajaRemesa" name="btnAceptarBajaRemesa" class="btn btn-info"
+          <input type="button" id="btnAceptarImprimirMulta" name="btnAceptarImprimirMulta" class="btn btn-info"
             value="Imprimir" onclick="botonImprimirMulta();" />
         </div>
       </div>
 
     </fieldset>
   </form>
+<!--Fin Formulario de Impresión de Multa-->
 
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Imprimir Multa CIERRA ------------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
-
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Listados ABRE ------------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
+<!--Formulario de Listado de Multas por Fecha-->
   <form class="form-horizontal" name="formListarMultasFecha" id="formularios">
     <fieldset>
-
-      <!-- Form Name -->
       <legend>Listar Multas Por Fechas</legend>
 
-      <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtFechaInicio">Seleccione una fecha inicial: </label>
         <div class="col-md-4">
-          <input id="txtIdMulta" name="txtIdMulta" type="date" placeholder="" class="form-control input-md">
-
+          <input id="txtFechaInicio" name="txtIdMulta" type="date" placeholder="" class="form-control input-md">
         </div>
       </div>
 
-      <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="txtFechaFin">Seleccione una fecha final: </label>
         <div class="col-md-4">
-          <input id="txtIdMulta" name="txtIdMulta" type="date" placeholder="" class="form-control input-md">
-
+          <input id="txtFechaFin" name="txtIdMulta" type="date" placeholder="" class="form-control input-md">
         </div>
       </div>
 
-      <!-- Button -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="btnAceptarBajaRemesa"></label>
         <div class="col-md-4">
-          <input type="button" id="btnAceptarBajaRemesa" name="btnAceptarBajaRemesa" class="btn btn-info"
+          <input type="button" id="btnAceptarListarMultasPorFecha" name="btnAceptarListarMultasPorFecha" class="btn btn-info"
             value="Listar" onclick="botonListarMultasPorFechas();" />
         </div>
       </div>
 
     </fieldset>
   </form>
+<!--Fin de Formulario de Listado de Multas Por Fecha-->
 
-  
+<!--Bloque de Listados-->
         <h3 id="titulo"></h3>
         <div class="col-md-4" id="areaListado"></div>
       </div>
   </div>
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- Formulario Imprimir Multa CIERRA ------------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
+<!--Fin de Bloque de Listados-->
 
-  <!-- ********************************************************************************************************************************************************************** -->
+<!--Fin Bloque de Formularios-->
 
-  <!---------------------------------------------------------------------------------------------------->
-  <!-- SCRIPTS ----------------------------------------------------------------------------------------->
-  <!---------------------------------------------------------------------------------------------------->
+  
 
-
+<!--Bloque de Script-->
   <script type="text/javascript" src="objetos.js"></script>
   <script type="text/javascript" src="codigo.js"></script>
 

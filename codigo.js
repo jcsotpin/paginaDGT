@@ -1,52 +1,53 @@
 "use strict";
 
- // Programa principal
- var oDGT = new DGT();
+var oDGT = new DGT();
+ 
+ocultarFormularios();
 
- //ocultarFormularios(); 
-  ocultarFormularios();
-
-// Oculta los formularios por defecto -----------------------------------------------------------------------------------------------
+// Oculta los Formularios y Vaciar Área de Listado
 function ocultarFormularios() {
     formAltaConductor.style.display = "none";
     formRegistroMulta.style.display = "none";
     formPagarMulta.style.display = "none";
     formImprimirMulta.style.display = "none";
     formListarMultasFecha.style.display = "none";
+    
     document.getElementById("titulo").innerHTML = "";
     document.getElementById("areaListado").innerHTML = "";
 }
 
+//Bloque de Funciones para Mostrar los Formularios
 
-// Muestra el formulario de Alta Persona -----------------------------------------------------------------------------------------------
+//Fommulario de Alta Persona
 function mostrarAltaPersona() {
     ocultarFormularios();
     formAltaConductor.style.display = "block";
 }
 
-// Muestra el formulario de Registro Multa -----------------------------------------------------------------------------------------------
+//Formulario de Registro Multa 
 function mostrarRegistroMulta() {
     ocultarFormularios();
     formRegistroMulta.style.display = "block";
 }
 
-// Muestra el formulario de Pagar Multa -----------------------------------------------------------------------------------------------
+//Formulario de Pagar Multa
 function mostrarPagarMulta() {
     ocultarFormularios();
     formPagarMulta.style.display = "block";
 }
-// Muestra el formulario de Imprimir Multa -----------------------------------------------------------------------------------------------
+//Formulario de Imprimir Multa
 function mostrarImprimirMulta() {
   ocultarFormularios();
   formImprimirMulta.style.display = "block";
 }
-//Muestra el formulario para elegir dis fechas y mostrar un listado de multas entre esas fechas
+//Formulario de Listado de Multas por Fechas
 function mostrarListadoMultasPorFecha(){
     ocultarFormularios();
     formListarMultasFecha.style.display = "block";
 }
+//Fin de Bloque de Funciones para Mostrar los Formularios
 
-  // Acepta el Alta de la persona creada -----------------------------------------------------------------------------------------------
+//Función Alta de Persona
   function aceptarAltaPersona() {
     let sNIF = formAltaConductor.txtNIF.value.trim();
     let sNombre = formAltaConductor.txtNombre.value.trim();
@@ -96,7 +97,7 @@ function mostrarListadoMultasPorFecha(){
     }
   }
 
-  // Acepta el Alta de la multa -----------------------------------------------------------------------------------------------
+//Finción de Alta de Multa 
 function aceptarAltaMulta() {
   let sIdMulta = formRegistroMulta.txtIdMulta.value.trim();
   let sNIFConductor = formRegistroMulta.txtNIFConductor.value.trim();
@@ -144,7 +145,7 @@ function aceptarAltaMulta() {
   }
 }
 
-// Pagar Multa
+//Función de Pago de Multa
 function aceptarPagarMulta(){
   let idMultaBuscada = formPagarMulta.txtIdMulta.value.trim();
 
@@ -156,7 +157,31 @@ function aceptarPagarMulta(){
   }
 }
 
-//Funciones Buscar Elementos//////////////////////////////////////////////
+//Fuinción Imprimir Multa
+function botonImprimirMulta(){
+  let oMultaBuscada = null;
+  let multa1= new Multa(formImprimirMulta.txtIdMulta.value, "", "",0 , false, "",null)
+  oMultaBuscada = oDGT.imprimirMulta(multa1);
+
+  if(oMultaBuscada==false)
+  {
+      alert("La multa que desea imprimir no existe");
+  }
+  else
+  {
+      multa = open("Multa.html");
+      multa.document.getElementById("idMulta").innerHTML= oMultaBuscada.idMulta;
+      multa.document.getElementById("nifConductor").innerHTML= oMultaBuscada.nifConductor;
+      multa.document.getElementById("nifGuardia").innerHTML= oMultaBuscada.nifGuardia;
+      multa.document.getElementById("importe").innerHTML= oMultaBuscada.importe;
+      multa.document.getElementById("pagada").innerHTML= oMultaBuscada.pagada;
+      multa.document.getElementById("descripcion").innerHTML= oMultaBuscada.descripcion;
+      multa.document.getElementById("fecha").innerHTML= oMultaBuscada.fecha;
+      //multa.document.getElementById("tipo").innerHTML= oMultaBuscada.tipo;
+  }
+}
+
+//Bloque de Funciones de Búsqueda de Elementos
 function _buscarConductor(NIFBuscado) {
   let oConductorExistente = null;
 
@@ -178,26 +203,32 @@ function _buscarMulta(idMultaBuscada) {
 
   return oMultaExistente;
 }
-//////////////////////////////////////////////////////////////////////////////
+//Fin del Bloque de Búsqueda de Elementos
 
-//Funciones Mostrar Listados///////////////////////////////////////////
+//Bloque de Funciones Mostrar Listados
 function mostrarListadoSaldoConductor(){
   ocultarFormularios();
+  
   let sListado = oDGT.listadoSaldoConductor();
+  
   document.getElementById("areaListado").innerHTML= sListado;
   document.getElementById("titulo").innerHTML= "Listado de Conducoters con Saldo Pendiente";
 }
 
 function mostrarListadoPuntosConductor(){
   ocultarFormularios();
+  
   let sListado = oDGT.listadoPuntosConductor();
+  
   document.getElementById("titulo").innerHTML= "Listado de los Puntos de Sanción por Conductor";
   document.getElementById("areaListado").innerHTML= sListado;
 }
 
 function mostrarListadoMultasPorGuardia(){
   ocultarFormularios();
+  
   let sListado = oDGT.listadoMultasPorGuardia();
+  
   document.getElementById("titulo").innerHTML= "Listado de Multas por Guardia";
   document.getElementById("areaListado").innerHTML= sListado;
   
@@ -205,25 +236,33 @@ function mostrarListadoMultasPorGuardia(){
 
 function botonListarMultasPorFechas(){
   ocultarFormularios();
-  let sListado = oDGT.listadoMultasPorFecha();
+  
+  let fechaInicial = formListarMultasFecha.txtFechaInicio.value;
+  let fechaFinal = formListarMultasFecha.txtFechaFin.value;
+  let sListado = oDGT.listadoMultasPorFecha(fechaInicial,fechaFinal);
+  
   document.getElementById("titulo").innerHTML= "Listado de Multas en las Fechas dadas";
   document.getElementById("areaListado").innerHTML= sListado;
 }
 
 function mostrarListadoConductores(){
   ocultarFormularios();
+  
   let sListado = oDGT.listadoConductores();
+  
   document.getElementById("titulo").innerHTML= "Listado de Conductores";
   document.getElementById("areaListado").innerHTML= sListado;
 }
 
 function mostrarListadoGuardias(){
   ocultarFormularios();
+ 
   let sListado = oDGT.listadoGuardiaCiviles();
+  
   document.getElementById("titulo").innerHTML= "Listado de Guardias";
   document.getElementById("areaListado").innerHTML= sListado;
 }
-////////////////////////////////////////////////////////////////////////////////////////
+//Fin del Bloque de Funciones Mostrar Listados
 
 // Fuinción Imprimir Multa---------------------------------------------------------------------------------------
 function botonImprimirMulta(){
